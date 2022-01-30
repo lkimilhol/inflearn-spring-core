@@ -10,10 +10,11 @@ import hello.core.member.MemberRepository;
 @Component
 public class OrderServiceImpl implements OrderService{
 
+    // final 키워드를 붙임으로써 생성자에서만 셋팅이 가능하므로 불변이다.
+    // fianl 키워드를 붙임으로써 초기화가 되지 않으면 컴파일 에러!
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
 
-    @Autowired
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
